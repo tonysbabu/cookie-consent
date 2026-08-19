@@ -1,14 +1,64 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-white: #ffffff;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #382fa3;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91d1b;
+  --color-neutral-900: #171717;
+  --color-neutral-600: #525252;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-200: #edf0f3;
+  --color-neutral-300: #d2d6db;
+  --color-neutral-800: #e5e5e5;
+
+  --color-surface-overlay: rgba(0, 0, 0, 0.5);
+
+  --color-primary: var(--color-white);
+  --color-brand-primary: var(--color-indigo-700);
+  --color-brand-primary-emphasize: var(--color-indigo-800);
+  --color-brand-destructive: var(--color-red-600);
+  --color-brand-destructive-emphasize: var(--color-red-700);
+
+  /* Semantic Focus Ring Tokens */
+  --color-ring-brand-primary: var(--color-indigo-500);
+  --color-ring-secondary: var(--color-neutral-400);
+  --color-ring-brand-destructive: var(--color-red-500);
+
+  --color-content-main: var(--color-neutral-900);
+  --color-content-muted: var(--color-neutral-600);
+
+  --color-border-primary: var(--color-neutral-800);
+  --color-border-secondary: var(--color-neutral-200);
+
+  --color-surface-default: var(--color-white);
+  --color-surface-muted: var(--color-neutral-50);
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --shadow-button:
+    0px 1px 2px 0 rgb(0 0 0 / 0.06), 0px 1px 3px 0 rgb(0 0 0 / 0.1);
+  --border-button: 0.5px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface-default text-content-main antialiased selection:bg-brand-primary selection:text-white;
+  }
+
+  h2 {
+    @apply font-semibold text-base text-neutral-900;
+  }
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
-
+  @apply bg-white;
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
